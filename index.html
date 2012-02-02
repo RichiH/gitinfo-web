@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html><head><title>#git bot interface</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head><body>
+<h1>#git bot interface</h1>
+<h2>Functions</h2>
+<p>Here are your choices so far:
+
+<ul>
+	<li><a href="faq.php">List FAQ entries</a>
+	<li><a href="trigger.php">List active triggers</a> (those things that
+	look like !<em>foo</em>)</a>
+</ul>
+
+<h2>Introduction</h2>
+<p>The following features are available on IRC:
+<ul>
+<li><strong>Triggers</strong>: inline commands in the form of !<em>foo</em>
+(<a href="trigger.php">list</a>) spit out a previously defined text for
+<em>foo</em>. It will be addressed to whoever you addressed with the line that
+you used the trigger in. It can be used anywhere in the middle of a line,
+though it should not run into other words.
+	<ul><li><strong>Edit</strong>: If you are logged into NickServ, you
+	can use ".trigger_edit &lt;trigger&gt; &lt;new expansion&gt;" to
+	change the value of a trigger (no "!" there).
+	<li><strong>Add new</strong>: Only available to selected people; same
+	syntax as for editing. If you have been hanging out in #git for quite
+	some time and haven't been selected yet, go shout at jast to make it
+	happen.
+	<li><strong>Aliases</strong>: to make one trigger an alias for
+	another, set its contents to "@!othertrigger".
+	<li><strong>Matching</strong>: if a request for !foo doesn't find an
+	expansion named "foo", it will search for other names that
+	<em>contain</em> "foo", and will spit out the shortest match instead.
+	</ul>
+<li><strong>Manpages</strong>: Say something like "man git-commit" to show a
+link to one of git's manpages. Addressing works the same as for triggers.
+<li><strong>FAQs</strong>: Say something like "faq non-bare" to link to an FAQ
+from the git wiki. Valid keywords are the anchors used on the wiki page.
+Addressing works the same as for triggers.
+<li><strong>Web login</strong>: use the ".weblogin" command to get a link for
+activating extra features on the web page, such as editing and reverting
+trigger texts.
+<li><strong>Random stuff</strong>: use the ".random" command to get a random
+line of wisdom (well, a random line of text, at any rate) contributed by a
+user.
+	<ul><li><strong>Add</strong>: you can contribute lines if you are
+	logged in. Simply use the command ".random add <em>Your line
+	here</em>".
+	<li><strong>Delete</strong>: the bot appends a line's ID when
+	outputting the line. You can use the command ".random delete 5" to
+	delete the line with ID 5. Note that only a select few can delete
+	lines.
+	</ul>
+</ul>
+
+<p>Commands and triggers can be used both in-channel and privately (by using
+/msg); if you address a trigger message to someone, the response will be sent
+in-channel. Otherwise, private messages will be responded to via NOTICE to you
+personally.
+
+</body></html>
