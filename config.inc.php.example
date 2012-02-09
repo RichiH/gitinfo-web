@@ -1,0 +1,5 @@
+<?php
+
+define('CTL_IP', '127.0.0.1');
+define('CTL_PORT', 14576);
+define('CTL_PWD', 'hackme'); # not currently used by anything
